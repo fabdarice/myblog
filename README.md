@@ -1,2 +1,2 @@
-myblog new project
+myblog
 ======
