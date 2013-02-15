@@ -1,0 +1,9 @@
+<% if flash[:notice] %>
+  <%= flash[:notice] %>
+<% end %>
+<h2>List of all Articles</h2>
+<% @articles.each do |article| %>
+  Title : <%= article.title %><br />
+  Content : <%= article.content %><br />
+  <%= link_to "Edit", edit_article_path(article) %>
+<% end %>
