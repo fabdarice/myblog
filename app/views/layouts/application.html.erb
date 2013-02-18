@@ -1,14 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Myblog</title>
+  <title>ChillOutInLA</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "jquery.nivo.slider_fab.js" %>
+  <%= javascript_include_tag "jquery.nivo.slider.pack.js" %>
   <%= csrf_meta_tags %>
 </head>
+<script type="text/javascript">
+    $(window).load(function() {
+        $('#slider').nivoSlider();
+    });
+</script>
+
 <body>
+  <div id="myblog_page">
+    <div id="myblog_page_container">
+      <div class="slider-wrapper theme-light">
+          <div id="slider" class="nivoSlider">
+              <img src="/images/image1.jpg" data-thumb="/images/image1.jpg" alt="" title="Example 2"/>
+              <a href="http://dev7studios.com"><img src="/images/image2.jpg" data-thumb="/images/image2.jpg" alt="" title="This is an example of a caption" /></a>
+              <img src="/images/image3.jpg" data-thumb="/images/image3.jpg" alt="" data-transition="slideInLeft" title="Example3" />
+              <img src="/images/image4.jpg" data-thumb="/images/image4.jpg" alt="" data-transition="slideInLeft" title="Example4" />
+              
+          </div>
+      </div>
 
-<%= yield %>
-
+      <div id="myblog_body">
+        <div id="myblog_body_articles">
+          <%= yield %>
+        </div>
+        <div id="myblog_body_categories">
+          <%= image_tag "/images/fabdarice.png" %>
+            <a href="#">Category 1</a><br>
+            <a href="#">Category 2</a><br>
+            <a href="#">Category 3</a><br>
+            <a href="#">Category 4</a><br>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

@@ -1,0 +1,27 @@
+<h2><%= @article.title %></h2>
+
+<%= raw(@article.content) %>
+
+<br><br>
+<h3>List of comments</h3>
+
+<% @article.comments.each do |comment| %>
+  <div class="one_article_comment">    
+    <%= comment.author %><br>
+    <%= comment.content %>
+  </div>
+<% end %>
+
+<h3>Ajouter un commentaire</h3>
+<% @comment = Comment.new %>
+<%= form_for [@article, @comment] do |f| %>
+  <%= f.label :author %>
+  <%= f.text_field :author %><br>
+  <%= display_error(@comment, 'author') %><br>
+  
+  <%= f.label :content %>
+  <%= f.text_area :content %><br>
+  <%= display_error(@comment, 'content') %><br>
+  <%= f.submit %>
+<% end %>
+

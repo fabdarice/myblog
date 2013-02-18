@@ -1,0 +1,54 @@
+
+body {
+  font:14px/1.6 Georgia, Palatino, Palatino Linotype, Times, Times New Roman, serif;
+  color:black;
+  
+  background: url(/images/myblog_background.jpg) no-repeat center fixed; 
+  -webkit-background-size: cover; /* pour Chrome et Safari */
+  -moz-background-size: cover; /* pour Firefox */
+  -o-background-size: cover; /* pour Opera */
+  background-size: cover; /* version standardisée */
+
+}
+
+
+#myblog_page {
+  width: 1000px;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, .3);
+  -webkit-background-clip: padding-box; /* for Safari */
+  background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
+  margin:auto;
+}
+
+#myblog_page_container {
+  padding: 50px;
+}
+
+#myblog_body {
+  
+  overflow: hidden;
+
+  #myblog_body_articles {
+    width: 670px;
+    float: left;
+    background-color: #fff;
+    border: 2px solid grey;
+  }
+
+  #myblog_body_categories {
+    background-color: #000;
+    border: 1px solid grey;
+    margin-left: 5px;
+    width: 200px;
+    float: right;
+    padding-left: 20px;
+    padding-top: 30px;
+  }
+}
+
+.article_category li {
+  list-style: none;
+  margin-left:0;
+  padding-left:0;
+}

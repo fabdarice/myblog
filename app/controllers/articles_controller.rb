@@ -2,6 +2,7 @@ class ArticlesController < ApplicationController
   respond_to :html, :xml, :json
 
   def show
+    @article = Article.find(params[:id])
   end
 
   def edit
@@ -36,6 +37,12 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
+    @article = Article.find(params[:id])
+    if @article.destroy
+      redirect_to articles_path
+    else
+      flash[:error] = "Error. Your article has not been deleted."
+    end
   end
 
   def index

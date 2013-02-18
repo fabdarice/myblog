@@ -1,9 +1,16 @@
-<% if flash[:notice] %>
-  <%= flash[:notice] %>
-<% end %>
-<h2>List of all Articles</h2>
 <% @articles.each do |article| %>
-  Title : <%= article.title %><br />
-  Content : <%= article.content %><br />
-  <%= link_to "Edit", edit_article_path(article) %>
+  <div class="one_article">
+    <div class="article_icon">
+      <%= image_tag "/images/icon_party.png" %>
+    </div>
+    <div class="article_content">
+      <span class="article_title"><%= link_to "#{article.title}", article_path(article) %></span><br />
+      <span class="article_date_comment">
+        <%= article.published_on.strftime('%A, %B %d %Y') %> 
+        <span class="article_comment"><%= article.comments.count %> Comments</span>
+      </span>
+      <%= link_to "Edit", edit_article_path(article) %>
+      <%= link_to "Delete", article_path(article), :method => "delete", :confirm => "Are you sure?" %>
+    </div>
+  </div>  
 <% end %>

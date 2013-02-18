@@ -1,6 +1,14 @@
 source 'https://rubygems.org'
 gem 'rails', '3.2.11'
 
+# Use Custom Text Editor
+gem 'tinymce-rails'
+
+# Image Slider
+gem 'rambling-slider-rails'
+
+gem "mongoid-paperclip", :require => "mongoid_paperclip"
+gem "aws-s3",            :require => "aws/s3"
 
 
 # Bundle edge Rails instead:
@@ -27,8 +35,6 @@ group :test, :development do
 end
 
 group :production do
-
-
 end
 
 gem 'jquery-rails'

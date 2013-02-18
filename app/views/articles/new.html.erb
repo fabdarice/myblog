@@ -1,12 +1,17 @@
+<%= tinymce_assets %>
+<%= tinymce %>
+
 <h2> Add a new Article </h2>
-<%= form_for @article do |article| %>
+<%= form_for @article ,:html => { :multipart => true } do |article| %>
   <%= article.label :title %>
   <%= article.text_field :title %><br>
-  <%= display_error(@article, 'title') %>
+  <%= display_error(@article, 'title') %><br>
 
   <%= article.label :content %>
-  <%= article.text_area :content %><br>
-  <%= display_error(@article, 'content') %>
-  <br>
+  <%= article.text_area :content, :class => "tinymce" %><br>
+  <%= display_error(@article, 'content') %><br>
+
+  <%= article.file_field :avatar %>
+  
   <%= article.submit %>
 <% end %>
