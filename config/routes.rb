@@ -1,4 +1,20 @@
 Myblog::Application.routes.draw do
+
+  root :to => 'articles#index'
+  
+  devise_for :users, :skip => [ :passwords, :registrations, :sessions]
+
+  as :user do
+      get  "/admin" => "devise/sessions#new", :as => :new_user_session
+      post "/admin" => "devise/sessions#create" , :as => :user_session
+      delete "/sign_out" => "devise/sessions#destroy", :as => :destroy_user_session
+  end
+   # get '/admin' => "devise/sessions#new", :as => :new_users_session
+   # post '/admin' => "devise/sessions#create", :as => :new_users_session
+   # delete '/sign_out' => "devise/sessions#destroy", :as => :destroy_users_session
+  #end
+
+
   resources :articles do
     resources :comments
   end

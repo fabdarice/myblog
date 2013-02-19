@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   respond_to :html, :xml, :json
+  before_filter :authenticate_user!, :only => [:new, :edit, :create, :update]
 
   def show
     @article = Article.find(params[:id])

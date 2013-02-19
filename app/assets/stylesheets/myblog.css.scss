@@ -1,32 +1,83 @@
+@import "shared_color";
 
 body {
   font:14px/1.6 Georgia, Palatino, Palatino Linotype, Times, Times New Roman, serif;
   color:black;
-  
-  background: url(/images/myblog_background.jpg) no-repeat center fixed; 
+  margin: 0px;
+  margin: auto;
+  background: url(/images/background1.png) no-repeat center fixed; 
   -webkit-background-size: cover; /* pour Chrome et Safari */
   -moz-background-size: cover; /* pour Firefox */
   -o-background-size: cover; /* pour Opera */
   background-size: cover; /* version standardisée */
+}
 
+#myblog_headline_container {
+  color: white;
+  font-size: 16px;
+  width: 100%;
+  margin: auto;
+  background-color: rgba(5, 5, 5, .7);
+  border-bottom: 0.01em solid lighten(black, 30%);
+  height: 40px;
+  line-height: 40px;
+
+  .myblog_headline {
+    padding-left: 170px;
+  }
+
+  .myblog_socialnetwork {
+    padding-left: 400px;
+    color: $my_blue;
+    img {
+      vertical-align: middle;
+    }
+  }
 }
 
 
 #myblog_page {
   width: 1000px;
   background-color: rgb(0, 0, 0);
-  background-color: rgba(0, 0, 0, .3);
+  background-color: rgba(5, 5, 5, .7);
   -webkit-background-clip: padding-box; /* for Safari */
   background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
-  margin:auto;
+  margin: auto;
+  border: 0.01em solid lighten(black, 30%);
+  border-top: 0px;
 }
 
+#logo {
+  float: left;
+  margin-top: 5px;
+  width: 250px;
+
+  blockquote {
+
+    font-family: Georgia, serif;
+    font-size: 14px;
+    font-style: italic;
+    width: 250px;
+    margin: 0.25em 0;
+    margin-top: 15px;
+    padding-left: 10px;
+    line-height: 1.45;
+    position: relative;
+    color: white;
+  }
+
+}
+
+
+
+
 #myblog_page_container {
-  padding: 50px;
+  padding: 40px;
+  padding-top: 20px;
 }
 
 #myblog_body {
-  
+  clear: both;
   overflow: hidden;
 
   #myblog_body_articles {

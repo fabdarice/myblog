@@ -1,7 +1,7 @@
 <h2>Edit Article</h2>
 <%= form_for @article, :html => { :multipart => true } do |article| %>
   <%= article.label :title %> 
-  <%= article.text_field :title %><br>
+  <%= article.text_field :title, :autofocus => true %><br>
   <%= display_error(@article, 'title') %><br>
   <%= article.label :content %>
   <%= article.text_area :content %><br>

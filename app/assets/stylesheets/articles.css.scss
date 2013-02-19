@@ -2,9 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import "shared_color";
+
 .one_article {
   margin-bottom: 10px;
-  border-left: 2px solid grey;
+  
   height: 55px;
 
   .article_icon {
@@ -17,6 +19,15 @@
     float: left;
     padding-left: 10px;
     padding-top: 5px;
+  }
+
+  a {
+    text-decoration: none;
+    color: $my_blue;
+  }
+
+  a:hover {
+    color: darken($my_blue, 20%);
   }
 }
 
