@@ -13,6 +13,9 @@ class ArticlesController < ApplicationController
   def update
     @article = Article.find(params[:id])
     @article.update_attributes(params[:article])
+    category_id = params[:category_id]
+    @category = Category.find(category_id)
+    @article.category = @category
     if @article.save
        flash[:notice] = "The modifications have been saved."
        redirect_to articles_path
@@ -28,6 +31,9 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(params[:article])
+    category_id = params[:category_id]
+    @category = Category.find(category_id)
+    @article.category = @category
     if @article.save
        flash[:notice] = "Your article has been added."
        redirect_to articles_path
@@ -47,6 +53,6 @@ class ArticlesController < ApplicationController
   end
 
   def index
-    @articles = Article.all
+    @articles = Article.desc("published_on")
   end
 end

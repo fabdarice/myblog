@@ -1,7 +1,20 @@
 <% @articles.each do |article| %>
   <div class="one_article">
     <div class="article_icon">
-      <%= image_tag "/images/icon_party.png" %>
+      
+      <% if article.category.name == 'Party' %>
+        <%= image_tag "/images/icon_party.png" %>
+      <% end %>
+      <% if article.category.name == 'Visit' %>
+        <%= image_tag "/images/icon_visit.png" %>
+      <% end %>
+      <% if article.category.name == 'Life' %>
+        <%= image_tag "/images/icon_life.jpg" %>
+      <% end %>
+      <% if article.category.name == 'Sport' %>
+        <%= image_tag "/images/icon_sport.png" %>
+      <% end %>
+        
     </div>
     <div class="article_content">
       <span class="article_title"><%= link_to "#{article.title}", article_path(article) %></span><br />

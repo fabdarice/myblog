@@ -6,19 +6,20 @@
 
 .one_article {
   margin-bottom: 10px;
-  
+  border: 2px solid grey;
   height: 55px;
+  width: 670px;
+  background-color: #fff;
+  padding: 5px;
 
   .article_icon {
     float: left;
-    padding-top: 5px;
     padding-left: 10px;
   }
 
   .article_content {
     float: left;
     padding-left: 10px;
-    padding-top: 5px;
   }
 
   a {
@@ -28,6 +29,11 @@
 
   a:hover {
     color: darken($my_blue, 20%);
+  }
+
+  a:visited {
+    text-decoration: none;
+    color: $my_blue;
   }
 }
 

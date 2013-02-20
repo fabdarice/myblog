@@ -13,6 +13,9 @@ class Article
       }
       
   embeds_many :comments
+  belongs_to :category
+
 
   validates :title, :content, :category, :presence => {:message => "Field cannot be empty."}
+  validates_attachment_presence :avatar, :message => "Avatar mandatory."
 end

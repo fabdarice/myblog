@@ -26,21 +26,23 @@
     </span>
   </div>
     <div id="myblog_page">
-      <div id="myblog_page_container">   
-        <div id="logo">
-          <%= link_to image_tag('/images/logo.png'), articles_path %>
-          <blockquote class="myblog_quotes">"<%= display_quote() %>"</blockquote>
-        </div>
-        <!-- Slider Image -->
-        <div class="slider-wrapper theme-light">
-            <div id="slider" class="nivoSlider">
-                <img src="/images/image1.jpg" data-thumb="/images/image1.jpg" alt="" title="Example 2"/>
-                <a href="http://dev7studios.com"><img src="/images/image2.jpg" data-thumb="/images/image2.jpg" alt="" title="This is an example of a caption" /></a>
-                <img src="/images/image3.jpg" data-thumb="/images/image3.jpg" alt="" data-transition="slideInLeft" title="Example3" />
-                <img src="/images/image4.jpg" data-thumb="/images/image4.jpg" alt="" data-transition="slideInLeft" title="Example4" />
-                
-            </div>
-        </div>
+      <div id="myblog_page_container">
+        <div id="myblog_header">   
+          <div id="logo">
+            <%= link_to image_tag('/images/logo.png'), articles_path %>
+            <blockquote class="myblog_quotes">"<%= display_quote() %>"</blockquote>
+          </div>
+          <!-- Slider Image -->
+        </div>  
+          <div class="slider-wrapper theme-light">
+              <div id="slider" class="nivoSlider">
+                  <img src="/images/image1.jpg" data-thumb="/images/image1.jpg" alt="" title="Example 2"/>
+                  <a href="http://dev7studios.com"><img src="/images/image2.jpg" data-thumb="/images/image2.jpg" alt="" title="This is an example of a caption" /></a>
+                  <img src="/images/image3.jpg" data-thumb="/images/image3.jpg" alt="" data-transition="slideInLeft" title="Example3" />
+                  <img src="/images/image4.jpg" data-thumb="/images/image4.jpg" alt="" data-transition="slideInLeft" title="Example4" />
+                  
+              </div>
+          </div>
 
         <!-- MyBlog Body (Articles) -->
         <div id="myblog_body">
@@ -49,10 +51,10 @@
           </div>
           <div id="myblog_body_categories">
             <%= image_tag "/images/fabdarice.png" %>
-              <a href="#">Category 1</a><br>
-              <a href="#">Category 2</a><br>
-              <a href="#">Category 3</a><br>
-              <a href="#">Category 4</a><br>
+              <% categories = Category.all %>
+              <% categories.each do |category| %>
+                <%= link_to "#{category.name} (#{Article.where(category_id: category.id).count})", articles_path %> <br>
+              <% end %>
           </div>
         </div>
       </div>
