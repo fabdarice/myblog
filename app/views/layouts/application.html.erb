@@ -49,14 +49,32 @@
           <div id="myblog_body_articles">
             <%= yield %>
           </div>
-          <div id="myblog_body_categories">
-            <%= image_tag "/images/fabdarice.png" %>
-              <% categories = Category.all %>
-              <% categories.each do |category| %>
-                <%= link_to "#{category.name} (#{Article.where(category_id: category.id).count})", articles_path %> <br>
-              <% end %>
+          <div id="myblog_body_rightside">
+              <div id="myblog_body_categories">
+
+                  <div class="myblog_menu_header">
+                     <%= image_tag '/images/icon_filter.png' %> FILTER ARTICLES
+                  </div>
+                  <ul>
+                    <li><%= link_to "Show All (#{Article.all.count})", articles_path %></li>
+                    <% categories = Category.all %>
+                    <% categories.each do |category| %>
+                      <li><%= link_to "#{category.name} (#{Article.where(category_id: category.id).count})", articles_path %></li>
+                    <% end %>
+                  </ul>  
+              </div><br>
+
+              <div id="myblog_body_identity">
+                <div class="myblog_menu_header">
+                    WHO ARE YOU?
+                </div>
+                <%= image_tag "/images/fabdarice.png" %>  
+              </div>
+
+              
+            </div>
           </div>
-        </div>
+          
       </div>
     </div>
 

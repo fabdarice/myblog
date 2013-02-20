@@ -84,22 +84,55 @@ body {
   #myblog_body_articles {
     
     float: left;
-    
+  }
+
+}
+
+#myblog_body_rightside {
+  margin-left: 5px;
+  width: 200px;
+  float: right;
+
+  .myblog_menu_header {
+      background-color: #353535;
+      width: 198px;
+      border-bottom: 1px solid grey;
+      color: darken(white, 10%);
+      font-size: 16px;
+      height: 40px;
+      line-height: 40px;
+      
+
+      img {
+        vertical-align: middle;
+        text-align: left;
+        padding-left: 10px;
+        padding-right: 5px;
+      }
   }
 
   #myblog_body_categories {
-    background-color: #000;
     border: 1px solid grey;
-    margin-left: 5px;
-    width: 200px;
-    float: right;
-    padding-left: 20px;
-    padding-top: 30px;
+    background: none;
+
+    li {
+      list-style: none;
+      margin-left:0;
+      padding-left:0;
+      display : list-item;
+      list-style-image: url('/images/bullet_point.png');
+    }
+
+    a {
+      text-decoration: none;
+      color : white;
+    }
+
+    a:hover {
+      color: $my_blue;
+    }
+
   }
 }
 
-.article_category li {
-  list-style: none;
-  margin-left:0;
-  padding-left:0;
-}
+
