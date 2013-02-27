@@ -19,4 +19,4 @@
 /image_photoshop/*
 
 # Ignore all images upload
-/system/*
+/system/articles/*

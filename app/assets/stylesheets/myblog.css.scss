@@ -2,7 +2,7 @@
 
 body {
   font:14px/1.6 Georgia, Palatino, Palatino Linotype, Times, Times New Roman, serif;
-  color:black;
+  color:white;
   margin: 0px;
   margin: auto;
   background: url(/images/background.png) no-repeat center fixed; 
@@ -12,27 +12,43 @@ body {
   background-size: cover; /* version standardisée */
 }
 
+.title {
+  font-size: 24px;
+  color: $my_blue;
+}
+
 #myblog_headline_container {
   color: white;
   font-size: 16px;
   width: 100%;
-  margin: auto;
+  
   background-color: rgba(5, 5, 5, .7);
+  background-repeat: repeat-x;
   border-bottom: 0.01em solid lighten(black, 30%);
   height: 40px;
-  line-height: 40px;
 
-  .myblog_headline {
-    padding-left: 170px;
+  #myblog_headline {
+    width: 1000px;
+    height: 40px;
+    line-height: 40px;
+    margin: auto;
+    
+    .headline_socialnetwork_icon {
+        
+        float: right;
+        padding-right: 10px;
+
+        img  {
+          vertical-align: middle;
+        }
+      }
+    
   }
 
-  .myblog_socialnetwork {
-    padding-left: 400px;
-    color: $my_blue;
-    img {
-      vertical-align: middle;
-    }
-  }
+    
+      
+    
+  
 }
 
 
@@ -135,4 +151,8 @@ body {
   }
 }
 
-
+.welcome_text {
+  color: white;
+  font-size: 12px;
+  padding: 10px;
+}

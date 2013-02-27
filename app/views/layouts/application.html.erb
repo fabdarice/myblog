@@ -14,16 +14,17 @@
 
 <body>
   <div id="myblog_headline_container">
-    <span class="myblog_headline">
+    <div id="myblog_headline">
       Blog about the life of a French expatriate living in Los Angeles.
       <% if user_signed_in? %>
         - <%= link_to "Log out", destroy_user_session_path, :method => :delete %>
       <% end %>
-    </span>  
-    <span class="myblog_socialnetwork">
-      <%= image_tag('/images/icon_twitter.png') %>
-      <%= image_tag('/images/icon_facebook.png') %>
-    </span>
+
+      <span class="headline_socialnetwork_icon">
+        <%= image_tag('/images/icon_twitter.png') %>
+        <%= image_tag('/images/icon_facebook.png') %>
+      </span>
+    </div>
   </div>
     <div id="myblog_page">
       <div id="myblog_page_container">
@@ -36,10 +37,11 @@
         </div>  
           <div class="slider-wrapper theme-light">
               <div id="slider" class="nivoSlider">
-                  <img src="/images/image1.jpg" data-thumb="/images/image1.jpg" alt="" title="Example 2"/>
-                  <a href="http://dev7studios.com"><img src="/images/image2.jpg" data-thumb="/images/image2.jpg" alt="" title="This is an example of a caption" /></a>
-                  <img src="/images/image3.jpg" data-thumb="/images/image3.jpg" alt="" data-transition="slideInLeft" title="Example3" />
-                  <img src="/images/image4.jpg" data-thumb="/images/image4.jpg" alt="" data-transition="slideInLeft" title="Example4" />
+                  <% @last_articles = Article.limit(3).order_by([:published_on, :desc]) %>
+                  <% @last_articles.each do |last_article| %>
+                    <%= image_tag last_article.avatar.url(:medium), :title => last_article.title, :alt => last_article.title %>
+                  <% end %>
+                  
                   
               </div>
           </div>
@@ -51,29 +53,30 @@
           </div>
           <div id="myblog_body_rightside">
               <div id="myblog_body_categories">
-
-                  <div class="myblog_menu_header">
-                     <%= image_tag '/images/icon_filter.png' %> FILTER ARTICLES
-                  </div>
-                  <ul>
-                    <li><%= link_to "Show All (#{Article.all.count})", articles_path %></li>
-                    <% categories = Category.all %>
-                    <% categories.each do |category| %>
-                      <li><%= link_to "#{category.name} (#{Article.where(category_id: category.id).count})", articles_path %></li>
-                    <% end %>
-                  </ul>  
+                <div class="myblog_menu_header">
+                   <%= image_tag '/images/icon_filter.png' %> FILTER ARTICLES
+                </div>
+                <ul>
+                  <li><%= link_to "Show All (#{Article.all.count})", articles_path %></li>
+                  <% categories = Category.all %>
+                  <% categories.each do |category| %>
+                    <li><%= link_to "#{category.name} (#{Article.where(category_id: category.id).count})", articles_path %></li>
+                  <% end %>
+                </ul>  
               </div><br>
 
-              <div id="myblog_body_identity">
+              <div id="myblog_body_categories">
                 <div class="myblog_menu_header">
-                    WHO ARE YOU?
-                </div>
+                    <%= image_tag '/images/icon_welcome.png' %> WELCOME BUDDY
+                </div><br>
                 <%= image_tag "/images/fabdarice.png" %>  
+                <br>
+                <p class="welcome_text">Hello I am Fabrice, French living in LA !! Follow my ezfezfezfok efzkezofke</p>
               </div>
 
               
-            </div>
           </div>
+        </div>
           
       </div>
     </div>

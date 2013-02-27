@@ -1,27 +1,32 @@
-<h2><%= @article.title %></h2>
+<div class="show_one_article">
+  <span class="title"><%= @article.title %></span><br>
+  <span class="article_date"><%= @article.published_on.strftime('%A, %B %d %Y') %></span><br>
+  <hr>
 
-<%= raw(@article.content) %>
+  <%= raw(@article.content) %>
 
-<br><br>
-<h3>List of comments</h3>
+  <br>
+  <hr>
+  <h3>List of comments</h3>
 
-<% @article.comments.each do |comment| %>
-  <div class="one_article_comment">    
-    <%= comment.author %><br>
-    <%= comment.content %>
-  </div>
-<% end %>
+  <% @article.comments.each do |comment| %>
+    <div class="one_article_comment">    
+      <%= comment.author %><br>
+      <%= comment.content %>
+    </div>
+  <% end %>
 
-<h3>Ajouter un commentaire</h3>
-<% @comment = Comment.new %>
-<%= form_for [@article, @comment] do |f| %>
-  <%= f.label :author %>
-  <%= f.text_field :author %><br>
-  <%= display_error(@comment, 'author') %><br>
-  
-  <%= f.label :content %>
-  <%= f.text_area :content %><br>
-  <%= display_error(@comment, 'content') %><br>
-  <%= f.submit %>
-<% end %>
+  <h3>Ajouter un commentaire</h3>
+  <% @comment = Comment.new %>
+  <%= form_for [@article, @comment] do |f| %>
+    <%= f.label :author %>
+    <%= f.text_field :author %><br>
+    <%= display_error(@comment, 'author') %><br>
+    
+    <%= f.label :content %>
+    <%= f.text_area :content %><br>
+    <%= display_error(@comment, 'content') %><br>
+    <%= f.submit %>
+  <% end %>
 
+</div>

@@ -19,8 +19,7 @@
   }
 
   .article_content {
-    float: left;
-    padding-left: 10px;
+    padding-left: 70px;
   }
 
   a {
@@ -31,20 +30,29 @@
   a:hover {
     color: darken($my_blue, 20%);
   }
-
-
 }
+
+.show_one_article {
+  background-color: #fff;
+  width: 670px;
+  clear: both;
+  padding: 10px;
+}
+
 
 .article_title {
   font-size: 18px;
+  
 }
 
-
-
-.article_date_comment {
+.article_date {
   color: #8A8A8A;
+  float: left;
+  
+}
 
-  .article_comment {
-    float: right;
-  }
+.article_comment {
+  color: #8A8A8A;
+  float: right;
+  padding-right: 50px;
 }
