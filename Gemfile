@@ -1,17 +1,21 @@
 source 'https://rubygems.org'
 gem 'rails', '3.2.11'
 
-# Use Custom Text Editor
+# Gem for Custom Text Editor
 gem 'tinymce-rails'
 
-# Image Slider
+# Gem for Image Slider
 gem 'rambling-slider-rails'
 
+# Gem for Image Upload & Storage AWS S3
 gem "mongoid-paperclip", :require => "mongoid_paperclip"
 gem "aws-s3",            :require => "aws/s3"
 
+# Gem for user configuration
 gem "devise"
 
+# Gem for pagination of articles
+gem 'will_paginate_mongoid'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

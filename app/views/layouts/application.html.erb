@@ -37,12 +37,10 @@
         </div>  
           <div class="slider-wrapper theme-light">
               <div id="slider" class="nivoSlider">
-                  <% @last_articles = Article.limit(3).order_by([:published_on, :desc]) %>
+                  <% @last_articles = Article.limit(4).order_by([:published_on, :desc]) %>
                   <% @last_articles.each do |last_article| %>
-                    <%= image_tag last_article.avatar.url(:medium), :title => last_article.title, :alt => last_article.title %>
+                    <%= link_to (image_tag last_article.avatar.url(:medium), :title => last_article.title.gsub(/^#/, " #"), :alt => last_article.title), article_path(last_article) %>
                   <% end %>
-                  
-                  
               </div>
           </div>
 

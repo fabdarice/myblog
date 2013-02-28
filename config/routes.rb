@@ -15,9 +15,13 @@ Myblog::Application.routes.draw do
   #end
 
 
-  resources :articles do
+  resources :articles, :except => [:show] do
     resources :comments
   end
+
+  get "/articles/:title" => "articles#show", :as => :article, :path => "/articles/:title"
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

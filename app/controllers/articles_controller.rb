@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
   before_filter :authenticate_user!, :only => [:new, :edit, :create, :update]
 
   def show
-    @article = Article.find(params[:id])
+    @article = Article.find(params[:title])
   end
 
   def edit
@@ -53,6 +53,11 @@ class ArticlesController < ApplicationController
   end
 
   def index
-    @articles = Article.desc("published_on")
+    @articles = Article.desc("published_on").paginate(:page => params[:page], :per_page => 10)
+  end
+
+  def filter_by(filter)
+    @category = Category.where(:name => filter)
+    @articles = Article.where(:category => @category)
   end
 end

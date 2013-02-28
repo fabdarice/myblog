@@ -1,11 +1,15 @@
-<h2>Administrator authentification</h2>
+<div class="white_background">
+  <span class="title">Administrator authentification</span>
+  <hr>
 
-<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
+  <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+    <div><%= f.label :email %><br />
+    <%= f.email_field :email, :autofocus => true %></div>
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+    <div><%= f.label :password %><br />
+    <%= f.password_field :password %></div>
 
-  <div><%= f.submit "Sign in" %></div>
-<% end %>
+    <div><%= f.submit "Sign in" %></div>
+  <% end %>
+  <br>
+</div>

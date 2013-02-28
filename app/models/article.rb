@@ -3,7 +3,7 @@ class Article
   include Mongoid::Paperclip
   field :title
   field :content
-  field :published_on, type: Date, default: -> { Time.now }
+  field :published_on, type: Time, default: -> { Time.now }
   field :category
   
   has_mongoid_attached_file :avatar, 

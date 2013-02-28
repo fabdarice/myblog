@@ -1,32 +1,58 @@
 <div class="show_one_article">
   <span class="title"><%= @article.title %></span><br>
-  <span class="article_date"><%= @article.published_on.strftime('%A, %B %d %Y') %></span><br>
-  <hr>
-
-  <%= raw(@article.content) %>
-
+  <span class="article_date">Published on <%= @article.published_on.strftime('%A, %B %d %Y') %></span>
+  
+  <% if @article.comments.count == 0 %>
+      <%= link_to "No comment yet", "#list_comment_bloc", :class => 'show_article_comment' %>
+  <% else %>
+      <%= link_to "#{@article.comments.count} comment(s)", "#list_comment_bloc", :class => 'show_article_comment' %>
+  <% end %> 
   <br>
   <hr>
-  <h3>List of comments</h3>
+  <br>
+  <%= raw(@article.content) %>
 
-  <% @article.comments.each do |comment| %>
-    <div class="one_article_comment">    
-      <%= comment.author %><br>
-      <%= comment.content %>
-    </div>
-  <% end %>
+  <br><hr><br>
 
-  <h3>Ajouter un commentaire</h3>
-  <% @comment = Comment.new %>
-  <%= form_for [@article, @comment] do |f| %>
-    <%= f.label :author %>
-    <%= f.text_field :author %><br>
-    <%= display_error(@comment, 'author') %><br>
-    
-    <%= f.label :content %>
-    <%= f.text_area :content %><br>
-    <%= display_error(@comment, 'content') %><br>
-    <%= f.submit %>
-  <% end %>
+  <div class="add_comment_bloc">
+    <% @comment = Comment.new %>
+    <%= form_for [@article, @comment] do |f| %>
+      <table>
+        <tr>
+            <td><%= f.label :author %> : </td>
+            <td><%= f.text_field :author, :placeholder => "Enter your name" %></td>
+        </tr>
+        <tr><td><%= display_error(@comment, 'author') %></td></tr>
+        <tr>
+            <td><%= f.label :content %> : </td>
+            <td><%= f.text_area :content, :cols => '68', :rows => '2', :placeholder => "Write your comment" %></td>
+        </tr>
+        <tr><td><%= display_error(@comment, 'content') %></td></tr>
+        <tr><td></td><td><%= f.submit "Add comment" %></td></tr>
+      </table>
+    <% end %>
+  </div>
+  <br>
+
+  <div id="list_comment_bloc">
+    <span class="second_title">
+    <% if @article.comments.count == 0 %>
+        No comment yet
+    <% else %>
+        <%= @article.comments.count %> Comment(s)
+    <% end %>    
+    </span>
+
+    <% @article.comments.each do |comment| %>
+      <hr class="comment_hr">
+      <div class="one_article_comment">    
+        <span class="comment_author"><%= comment.author %></span>
+        <span class="comment_published_on"><%= comment.published_on.strftime('%m-%d-%Y @ %I:%M %p') %></span><br>
+        <%= raw sanitize(simple_format(comment.content)) %>
+      </div>
+
+    <% end %>
+  </div>
+  
 
 </div>

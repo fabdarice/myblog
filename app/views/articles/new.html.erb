@@ -1,23 +1,26 @@
 <%= tinymce_assets %>
 <%= tinymce %>
 
-<h2> Create a new Article </h2>
-<%= form_for @article ,:html => { :multipart => true } do |article| %>
-  <%= article.label :title %> :
-  <%= article.text_field :title, :autofocus => true %><br>
-  <%= display_error(@article, 'title') %><br>
+<div class="white_background">
+  <span class="title"> Create a new Article </span>
+  <hr><br>
 
-  Upload XX : <%= article.file_field :avatar %>
-  <%= display_error(@article, 'avatar') %><br><br>
+  <%= form_for @article ,:html => { :multipart => true } do |article| %>
+    <%= article.label :title %> :
+    <%= article.text_field :title, :autofocus => true %><br>
+    <%= display_error(@article, 'title') %><br>
 
-  Select Article's category :
-  <% @categories = Category.all %>
-  <%= select_tag 'category_id', options_from_collection_for_select(@categories, 'id', 'name', @categories.first.id) %><br>
-  <%= display_error(@article, 'category') %><br>
+    Avatar : <%= article.file_field :avatar %>
+    <%= display_error(@article, 'avatar') %><br><br>
 
-  <%= article.label :content %>
-  <%= article.text_area :content, :class => "tinymce", :cols => '85', :rows => '50' %><br>
-  <%= display_error(@article, 'content') %><br>
-  
-  <%= article.submit %>
-<% end %>
+    Category :
+    <% @categories = Category.all %>
+    <%= select_tag 'category_id', options_from_collection_for_select(@categories, 'id', 'name', @categories.first.id) %><br>
+    <%= display_error(@article, 'category') %><br>
+
+    <%= article.text_area :content, :class => "tinymce", :cols => '84', :rows => '50' %><br>
+    <%= display_error(@article, 'content') %><br>
+    
+    <%= article.submit %>
+  <% end %>
+</div>

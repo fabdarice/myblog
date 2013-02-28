@@ -26,9 +26,12 @@
           <%= link_to "Delete", article_path(article), :method => "delete", :confirm => "Are you sure?" %>
         <% end %>
       </span>  
-        
-      
     </div>
     <div style="clear: both;"></div>
   </div>  
 <% end %>
+<% if @articles.count > 10 %>
+  <div class="apple_pagination">
+    <%= will_paginate @articles %>
+  </div> 
+<% end %> 

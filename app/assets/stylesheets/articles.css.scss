@@ -37,6 +37,14 @@
   width: 670px;
   clear: both;
   padding: 10px;
+
+  a {
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
 }
 
 
@@ -56,3 +64,4 @@
   float: right;
   padding-right: 50px;
 }
+
