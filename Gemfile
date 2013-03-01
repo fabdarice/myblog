@@ -37,7 +37,7 @@ end
 
 group :test, :development, :production do
   gem 'mongoid', "~> 3.0.0"
-  gem 'bson_ext'
+  gem 'bson_ext', "= 1.3.1"
 end
 
 gem 'jquery-rails'
