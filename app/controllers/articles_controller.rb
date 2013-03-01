@@ -57,7 +57,7 @@ class ArticlesController < ApplicationController
       @articles = Article.desc("published_on").paginate(:page => params[:page], :per_page => 10)
     else
       @category = Category.where(:name => params[:category_name]).first
-      @articles = Article.where(:category => @category)
+      @articles = Article.where(:category => @category).desc("published_on").paginate(:page => params[:page], :per_page => 10)
     end
   end
 
