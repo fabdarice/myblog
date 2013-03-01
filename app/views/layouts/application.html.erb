@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ChillOut In Los Angeles</title>
+  <title>Chill Out In Los Angeles</title>
   <%= stylesheet_link_tag 'application', :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -15,7 +15,7 @@
 <body>
   <div id="myblog_headline_container">
     <div id="myblog_headline">
-      Blog about the life of a French expatriate living in Los Angeles.
+      Blog about the life of a French expatriate in Los Angeles.
       <% if user_signed_in? %>
         - <%= link_to "Log out", destroy_user_session_path, :method => :delete %>
       <% end %>
@@ -69,7 +69,15 @@
                 </div><br>
                 <%= image_tag "/images/fabdarice.png" %>  
                 <br>
-                <p class="welcome_text">Hello I am Fabrice, French living in LA !! Follow my ezfezfezfok efzkezofke</p>
+                <p class="welcome_text">
+                    Hi guys !<br><br>
+                    I'm Fabrice, from Paris.<br>
+                    Reading blogs about expatriates living in Los Angeles have been a huge help to me. This is actually the reason why I decided to move in LA and live the California dream (ok ok.. 'Entourage' may have influence me a little bit...).<br><br>
+                    As I hope I can return the favor and help young and bright mind like yourself, this blog will share some precious moment of my daily life.<br>
+
+                    <br>Enjoy.... and chill out !<br>
+
+                </p>
               </div>
 
               
