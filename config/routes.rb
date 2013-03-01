@@ -15,11 +15,12 @@ Myblog::Application.routes.draw do
   #end
 
 
-  resources :articles, :except => [:show] do
+  resources :articles, :except => [:show, :index] do
     resources :comments
   end
 
-  get "/articles/:title" => "articles#show", :as => :article, :path => "/articles/:title"
+  get "/articles/:title" => "articles#show", :as => :article
+  get "/:category_name" => "articles#index", :as => :articles
 
 
   # The priority is based upon order of creation:
