@@ -35,12 +35,9 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-group :test, :development do
+group :test, :development, :production do
   gem 'mongoid', "~> 3.0.0"
   gem 'bson_ext'
-end
-
-group :production do
 end
 
 gem 'jquery-rails'
