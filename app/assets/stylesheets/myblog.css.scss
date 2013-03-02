@@ -163,6 +163,20 @@ body {
   padding: 10px;
 }
 
+.hr_footer {
+  background-color: #ABABAB;
+  font-size: 0;
+  height: 1px;
+  border-top: 0.07em solid #F3F3F3;
+}
+
+#footer {
+  margin-top: 10px;
+  width: 900px;
+  color: #F3F3F3;
+  font-size: 11px;
+  text-align: center;
+}
 
 .apple_pagination {
   background: #f1f1f1;

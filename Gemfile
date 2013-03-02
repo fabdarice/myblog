@@ -19,6 +19,9 @@ gem "devise"
 # Gem for pagination of articles
 gem 'will_paginate_mongoid'
 
+# Gem for view counts on page
+gem 'impressionist'
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 

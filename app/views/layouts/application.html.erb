@@ -4,6 +4,7 @@
   <title>Chill Out In Los Angeles</title>
   <%= stylesheet_link_tag 'application', :media => "all" %>
   <%= javascript_include_tag "application" %>
+  <%= favicon_link_tag %>
   <%= csrf_meta_tags %>
 </head>
 <script type="text/javascript">
@@ -22,8 +23,8 @@
       <% end %>
 
       <span class="headline_socialnetwork_icon">
-        <%= image_tag('/images/icon_twitter.png') %>
-        <%= image_tag('/images/icon_facebook.png') %>
+        <%= link_to image_tag('/images/icon_twitter.png'), "https://twitter.com/fAbdARiCe" %>
+        <%= link_to image_tag('/images/icon_facebook.png'), "http://www.facebook.com/fabrice.darice" %>
       </span>
     </div>
   </div>
@@ -77,14 +78,19 @@
                     As I hope I can return the favor and help young and bright mind like yourself, this blog will share some precious moment of my daily life.<br>
 
                     <br>Enjoy.... and chill out !<br>
-
+                  
                 </p>
+
               </div>
+
 
               
           </div>
-        </div>
-          
+        </div><br><br>
+        <hr class="hr_footer">
+        <div id="footer">
+            Chillout-in-losangeles.com - Daily Life of a French expatriate in Los Angeles - A smile doesn't cost a thing
+        </div>  
       </div>
     </div>
 

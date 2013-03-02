@@ -2,8 +2,10 @@ class ArticlesController < ApplicationController
   respond_to :html, :xml, :json
   before_filter :authenticate_user!, :only => [:new, :edit, :create, :update]
 
+
   def show
     @article = Article.where(:title => params[:title]).first
+    impressionist(@article)
   end
 
   def edit
@@ -54,7 +56,7 @@ class ArticlesController < ApplicationController
 
   def index
     if (params[:category_name] == nil) or (params[:category_name] == 'all')
-      @articles = Article.desc("published_on").paginate(:page => params[:page], :per_page => 10)
+      @articles = Article.desc("published_on").paginate(:page => params[:page], :per_page => 15)
     else
       @category = Category.where(:name => params[:category_name]).first
       @articles = Article.where(:category => @category).desc("published_on").paginate(:page => params[:page], :per_page => 10)

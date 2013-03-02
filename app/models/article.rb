@@ -18,4 +18,6 @@ class Article
 
   validates :title, :content, :category, :presence => {:message => "Field cannot be empty."}
   validates_attachment_presence :avatar, :message => "Avatar mandatory."
+
+  is_impressionable
 end
