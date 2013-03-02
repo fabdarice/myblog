@@ -5,7 +5,7 @@
   <span class="title"> Create a new Article </span>
   <hr><br>
 
-  <%= form_for @article ,:html => { :multipart => true } do |article| %>
+  <%= form_for @article ,:html => { :multipart => true }, :url => { :action => "create" } do |article| %>
     <%= article.label :title %> :
     <%= article.text_field :title, :autofocus => true %><br>
     <%= display_error(@article, 'title') %><br>

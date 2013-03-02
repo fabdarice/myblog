@@ -18,7 +18,7 @@ class ArticlesController < ApplicationController
     @article.category = @category
     if @article.save
        flash[:notice] = "The modifications have been saved."
-       redirect_to articles_path
+       redirect_to articles_path("all")
     else
        flash[:error] = "Error. The modifications of your article have not been saved."
        render "edit"
@@ -36,7 +36,7 @@ class ArticlesController < ApplicationController
     @article.category = @category
     if @article.save
        flash[:notice] = "Your article has been added."
-       redirect_to articles_path
+       redirect_to articles_path("all")
     else
        flash[:error] = "Error. Your article has not been saved."
        render "new"
@@ -46,7 +46,7 @@ class ArticlesController < ApplicationController
   def destroy
     @article = Article.find(params[:id])
     if @article.destroy
-      redirect_to articles_path
+      redirect_to articles_path("all")
     else
       flash[:error] = "Error. Your article has not been deleted."
     end

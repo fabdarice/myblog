@@ -17,7 +17,8 @@
     <div id="myblog_headline">
       Blog about the life of a French expatriate in Los Angeles.
       <% if user_signed_in? %>
-        - <%= link_to "Log out", destroy_user_session_path, :method => :delete %>
+        - <%= link_to "Log out", destroy_user_session_path, :method => :delete %> - 
+        <%= link_to "New Article", new_article_path() %>
       <% end %>
 
       <span class="headline_socialnetwork_icon">
