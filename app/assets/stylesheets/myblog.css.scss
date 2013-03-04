@@ -12,6 +12,16 @@ body {
   background-size: cover; /* version standardisée */
 }
 
+
+.error {
+  font-weight: bold;
+  color: red;
+}
+
+.blue {
+  color: $my_blue;
+}
+
 .white_background {
   background: white;
   width: 670px;
@@ -176,6 +186,17 @@ body {
   color: #F3F3F3;
   font-size: 11px;
   text-align: center;
+
+  a {
+    color: $my_blue;
+    text-decoration: none;
+  }
+
+
+
+  a:hover {
+    text-decoration: underline;
+  }
 }
 
 .apple_pagination {

@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/kristianmandrup/social-buttons.git
+  revision: 7d0ef2c5f63939336b1e30629084e68360ce3f87
+  specs:
+    social-buttons (0.3.7)
+      rails (>= 3.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -164,6 +171,7 @@ DEPENDENCIES
   rails (= 3.2.11)
   rambling-slider-rails
   sass-rails (~> 3.2.5)
+  social-buttons!
   tinymce-rails
   uglifier (>= 1.0.3)
   will_paginate_mongoid

@@ -23,6 +23,7 @@
       <% end %>
 
       <span class="headline_socialnetwork_icon">
+        <%= link_to image_tag('/images/icon_contact.png'), new_contacts_path %>
         <%= link_to image_tag('/images/icon_twitter.png'), "https://twitter.com/fAbdARiCe" %>
         <%= link_to image_tag('/images/icon_facebook.png'), "http://www.facebook.com/fabrice.darice" %>
       </span>
@@ -89,7 +90,7 @@
         </div><br><br>
         <hr class="hr_footer">
         <div id="footer">
-            Chillout-in-losangeles.com - Daily Life of a French expatriate in Los Angeles - A smile doesn't cost a thing
+            <%= link_to "Chillout-in-losangeles.com", articles_path("all") %> - Daily Life of a French expatriate in Los Angeles - <%= link_to "Contact Us", new_contacts_path %>
         </div>  
       </div>
     </div>

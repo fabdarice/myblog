@@ -1,0 +1,28 @@
+<div class="white_background">
+  <span class="title"> Contact Us </span>
+  <hr><br>
+  <% if flash[:error] %>
+    <span class="error"><%= flash[:error] %></span><br><br>
+  <% end %>
+  <% if flash[:success] %>
+    <span class="blue"><%= flash[:success] %></span><br><br>
+  <% end %>
+  Leave me a message if you have any questions or just want to say Hello !<br>
+  I'll answer you as soon as possible !<br><br>
+  <%= form_for @contact do |contact| %>
+    <%= contact.label :name %><br>
+    <%= contact.text_field :name %><br>
+    <span class="error"><%= display_error(@contact, :name) %></span><br>
+
+    <%= contact.label :email %><br>
+    <%= contact.text_field :email %><br>
+    <span class="error"><%= display_error(@contact, :email) %></span><br>
+
+    <%= contact.label :content %><br>
+    <%= contact.text_area :content %><br>
+    <span class="error"><%= display_error(@contact, :content) %></span><br>
+
+    <%= contact.submit "Send" %>
+  <% end %>
+  <br>
+</div>

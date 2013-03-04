@@ -23,6 +23,8 @@ Myblog::Application.routes.draw do
   get "/:category_name" => "articles#index", :as => :articles
 
 
+  resource :contacts, only: [:new, :create]
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

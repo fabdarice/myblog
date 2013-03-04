@@ -22,6 +22,10 @@ gem 'will_paginate_mongoid'
 # Gem for view counts on page
 gem 'impressionist'
 
+# Gem for Twitter/Facebook Like button
+gem "social-buttons", git: "git://github.com/kristianmandrup/social-buttons.git"
+
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
