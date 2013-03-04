@@ -8,7 +8,7 @@
       <%= link_to "#{@article.comments.count} comment(s)", "#list_comment_bloc", :class => 'show_article_comment' %>
   <% end %>
   <span class="article_view_count"><%= @article.impressionist_count %> Views</span><br>
-  <div id="tweet_button"><%= tweet_button(:count => "horizontal", :text => "Visit this awesome blog about a french expatriate living in Los Angeles : http://chillout-in-losangeles.com") %></div>
+  <div id="tweet_button"><%= tweet_button(:count => "horizontal", :text => "Visit this awesome blog article : ") %></div>
   <div id="facebook_like"><%= like_button("161594363997737") %></div>
   
 
