@@ -22,7 +22,7 @@
     <%= contact.text_area :content %><br>
     <span class="error"><%= display_error(@contact, :content) %></span><br>
 
-    <%= contact.submit "Send" %>
+    <%= contact.submit "Send", :class => "btn" %>
   <% end %>
   <br>
 </div>

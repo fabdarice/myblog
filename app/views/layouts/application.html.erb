@@ -55,7 +55,7 @@
           <div id="myblog_body_rightside">
               <div id="myblog_body_categories">
                 <div class="myblog_menu_header">
-                   <%= image_tag '/images/icon_filter.png' %> FILTER ARTICLES
+                   FILTER
                 </div>
                 <ul>
                   <li><%= link_to "Show All (#{Article.all.count})", articles_path("all") %></li>
@@ -64,22 +64,19 @@
                     <li><%= link_to "#{category.name} (#{Article.where(category_id: category.id).count})", articles_path(category.name) %></li>
                   <% end %>
                 </ul>  
-              </div><br>
+              <br>
 
-              <div id="myblog_body_categories">
                 <div class="myblog_menu_header">
-                    <%= image_tag '/images/icon_welcome.png' %> WELCOME BUDDY
+                    WELCOME
                 </div><br>
-                <%= image_tag "/images/fabdarice.png" %>  
-                <br>
+                <div class="my_picture"><%= image_tag "/images/fabdarice.png" %>  </div>
                 <p class="welcome_text">
                     Hi guys !<br><br>
                     I'm Fabrice, from Paris.<br>
-                    Reading blogs about expatriates living in Los Angeles have been a huge help to me. This is actually the reason why I decided to move in LA and live the California dream (ok ok.. 'Entourage' may have influence me a little bit...).<br><br>
+                    Reading blogs about expatriates living in Los Angeles have been a huge help to me. This is actually the reason why I decided to move in LA and live the California dream.<br><br>
                     As I hope I can return the favor and help young and bright mind like yourself, this blog will share some precious moment of my daily life.<br>
 
                     <br>Enjoy.... and chill out !<br>
-                  
                 </p>
 
               </div>
