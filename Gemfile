@@ -26,6 +26,7 @@ gem 'impressionist'
 gem "social-buttons", git: "git://github.com/kristianmandrup/social-buttons.git"
 
 
+gem 'sprockets'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 

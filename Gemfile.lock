@@ -172,6 +172,7 @@ DEPENDENCIES
   rambling-slider-rails
   sass-rails (~> 3.2.5)
   social-buttons!
+  sprockets
   tinymce-rails
   uglifier (>= 1.0.3)
   will_paginate_mongoid
