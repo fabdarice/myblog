@@ -25,6 +25,9 @@ gem 'impressionist'
 # Gem for Twitter/Facebook Like button
 gem "social-buttons", git: "git://github.com/kristianmandrup/social-buttons.git"
 
+# For adding meta description, keyword, title 
+gem 'metamagic'
+
 
 gem 'sprockets'
 # Bundle edge Rails instead:
