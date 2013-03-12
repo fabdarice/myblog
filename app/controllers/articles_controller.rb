@@ -5,7 +5,9 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.where(:title => params[:title]).first
-    impressionist(@article)
+
+
+    impressionist(@article, "Unique Visitor", :unique => [:ip_address])
   end
 
   def edit
