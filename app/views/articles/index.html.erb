@@ -20,7 +20,7 @@
       <span class="article_title"><%= link_to "#{article.title}", article_path(article.title) %></span><br>
 
       <span class="article_date"><%= article.published_on.strftime('%A, %B %d %Y') %> </span>
-      <span class="article_comment"><u><%= article.comments.count %> Comments</u>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;   <u><%= article.impressionist_count %> Views</u>
+      <span class="article_comment"><u><%= article.comments.count %> Comments</u>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;   <u><%= article.impressionist_count(:filter => :ip_address) %> Views</u>
         <% if user_signed_in? %>
           <%= link_to "Edit", edit_article_path(article) %>
           <%= link_to "Delete", article_path(article), :method => "delete", :confirm => "Are you sure?" %>
