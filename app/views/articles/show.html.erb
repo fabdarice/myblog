@@ -14,10 +14,38 @@
 
   <br>
   <hr>
+  <ul class="pager">
+    <li class="previous">
+      <% if @previous_article %>
+        <%= link_to raw("&larr; #{@previous_article.title}"), article_path(@previous_article.title) %>     
+      <% end %>
+    </li>
+    <li class="next">
+      <% if @next_article %>
+        <%= link_to raw("#{@next_article.title} &rarr;"), article_path(@next_article.title) %>
+      <% end %>  
+    </li>
+  </ul>
+  <br>
+  
   <br>
   <%= raw(@article.content) %>
 
-  <br><hr><br>
+  <br>
+  <ul class="pager">
+    <li class="previous">
+      <% if @previous_article %>
+        <%= link_to raw("&larr; #{@previous_article.title}"), article_path(@previous_article.title) %>     
+      <% end %>
+    </li>
+    <li class="next">
+      <% if @next_article %>
+        <%= link_to raw("#{@next_article.title} &rarr;"), article_path(@next_article.title) %>
+      <% end %>  
+    </li>
+  </ul>
+  <br>
+  <hr><br>
 
   <div class="add_comment_bloc">
     <% @comment = Comment.new %>

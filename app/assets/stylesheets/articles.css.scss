@@ -77,3 +77,29 @@
 #facebook_like {
   float: left;
 }
+
+
+.pager .previous > a, .pager .previous > span {
+    float: left;
+}
+
+
+.pager .next > a, .pager .next > span {
+    float: right;
+    margin-right: 50px;
+}
+
+.pager span {
+  color: #8A8A8A;
+}
+
+.pager a {
+    display: inline-block;
+    color: darken($my_blue, 20%);
+    text-decoration: none;
+}
+
+.pager {
+    list-style: none outside none;
+}
+

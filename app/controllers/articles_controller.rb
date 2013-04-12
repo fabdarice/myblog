@@ -6,7 +6,8 @@ class ArticlesController < ApplicationController
   def show
     @article = Article.where(:title => params[:title]).first
 
-
+    @next_article = Article.gt(id: @article.id).order_by(:id.asc).first
+    @previous_article = Article.lt(id: @article.id).order_by(:id.desc).first
     impressionist(@article, "Unique Visitor", :unique => [:ip_address])
   end
 
